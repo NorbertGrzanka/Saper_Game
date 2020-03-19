@@ -325,7 +325,7 @@ char MinesweeperBoard::getFieldInfo(int x, int y) const {
 int main()
 {
     srand(time(NULL));
-    MinesweeperBoard test(7,9,DEBUG);
-    test.debug_display();
+    MinesweeperBoard a(7,9,DEBUG);
+    a.debug_display();
     return 0;
 }
