@@ -1,5 +1,7 @@
 #include <iostream>
 #include <time.h>
+#include<cstdlib>
+#include <cmath>
 using namespace std;
 enum GameMode  { DEBUG, EASY, NORMAL, HARD };
 enum GameState { RUNNING, FINISHED_WIN, FINISHED_LOSS };
@@ -37,76 +39,84 @@ public:
     void debug_display() const;
 };
 MinesweeperBoard::MinesweeperBoard(int width, int height, GameMode mode ) {
-    srand(time(NULL));
+    this->width = width;
+    this->height = height;
     int SizeMin = width * height;
-    int lvl;
-    int a, b;
+    int mines = 0;
+
+
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
 
-            board[i][j].isRevealed = false;
-            board[i][j].hasMine = false;
-            board[i][j].hasFlag = false;
+            board[i][j].isRevealed = 0;
+            board[i][j].hasMine = 0;
+            board[i][j].hasFlag = 0;
         }
     }
-    if (mode == DEBUG) {
-        lvl = 0;
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < height; j++) {
-                if (i == j) {
-                    board[i][j].hasMine = true;
-                }
-                if ((j == 0) && (i % 2 == 0)) {
-                    board[i][j].hasMine = true;
-                }
-                if (i == 0) {
-                    board[i][j].hasMine = true;
-                }
-            }
-        }
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                if (board[i][j].hasMine == 1) {
-                    lvl += 1;
-                }
-            }
-        }
-    }
-
 
     switch (mode) {
-        case EASY:
-            lvl = SizeMin * 0.1;
-            while (lvl != 0) {
-                a = rand() % height;
-                b = rand() % width;
-                if (board[a][b].hasMine == 0) {
-                    board[a][b].hasMine == 1;
+        case EASY: {
+            while (mines < SizeMin * 0.1) {
+                for (int a = 0; a < height; a++) {
+                    for (int b = 0; b < width; b++) {
+                        if (board[a][b].hasMine == 0 and mines < SizeMin * 0.1) {
+                            board[a][b].hasMine = (rand() % 5) < 1;
+                            if (board[a][b].hasMine == 1) {
+                                mines += 1;
+                            }
+                        }
+                    }
                 }
-                lvl += 1;
             }
-        case NORMAL:
-            lvl = SizeMin * 0.2;
-            while (lvl != 0) {
-                a = rand() % height;
-                b = rand() % width;
-                if (board[a][b].hasMine == 0) {
-                    board[a][b].hasMine == 1;
+        }
+        case NORMAL: {
+            while (mines < SizeMin * 0.2) {
+                for (int a = 0; a < height; a++) {
+                    for (int b = 0; b < width; b++) {
+                        if (board[a][b].hasMine == false and mines < SizeMin * 0.2) {
+                            board[a][b].hasMine = (rand() % 5) < 1;
+                            if (board[a][b].hasMine = true) {
+                                mines += 1;
+                            }
+                        }
+                    }
                 }
-                lvl += 1;
             }
-        case HARD:
-            lvl = SizeMin * 0.3;
-            while (lvl != 0) {
-                a = rand() % height;
-                b = rand() % width;
-                if (board[a][b].hasMine == 0) {
-                    board[a][b].hasMine == 1;
+        }
+        case HARD: {
+            while (mines < SizeMin * 0.3) {
+                for (int a = 0; a < height; a++) {
+                    for (int b = 0; b < width; b++) {
+                        if (board[a][b].hasMine == false and mines < SizeMin * 0.3) {
+                            board[a][b].hasMine = (rand() % 5) < 1;
+                            if (board[a][b].hasMine == true) {
+                                mines += 1;
+                            }
+                        }
+                    }
                 }
-                lvl += 1;
             }
+        }
+        case DEBUG:
+        {
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < height; j++) {
+                    if (i == j) {
+                        board[i][j].hasMine = true;
+                    }
+                    if ((j == 0) && (i % 2 == 0)) {
+                        board[i][j].hasMine = true;
+                    }
+                    if (i == 0) {
+                        board[i][j].hasMine = true;
+                    }
+                }
+            }
+
+        }
     }
 }
+
 int MinesweeperBoard::getBoardWidth() const
 {
     return width;
@@ -119,18 +129,18 @@ int MinesweeperBoard::getMineCount() const {
     return mines;
 }
 
-bool MinesweeperBoard::hasFlag(int x, int y) const
+bool MinesweeperBoard::hasFlag(int x,int y) const
 {
-    if(board[x][y].hasFlag==true)
+    if(board[x][y].hasFlag==1)
     {
         return true;
     }
-    if(x>=width or x<0 or y>=height or y<0 or board[x][y].hasFlag==false or board[x][y].isRevealed==true)
+    if(board[x][y].hasFlag==0)
     {
         return false;
     }
+    return false;
 }
-
 
 //int MinesweeperBoard::getMineCount() const;
 int MinesweeperBoard::countMines(int x, int y) const {
@@ -196,8 +206,10 @@ void MinesweeperBoard::revealField(int x, int y)
         condition==FINISHED_LOSS;
     }
 }
-
-
+bool MinesweeperBoard::hasMine(int x, int y) const
+{
+    return 1;
+}
 GameState MinesweeperBoard::getGameState() const
 {
     if(condition == FINISHED_LOSS)
@@ -272,29 +284,39 @@ void MinesweeperBoard::debug_display() const
         }
         cout<<endl;
     }}
-char MinesweeperBoard::getFieldInfo(int x, int y) const
-{
-    if(x>width or x<0 or y>height or y<0) return '#';
-    if(board[x][y].isRevealed== false and board[x][y].hasFlag==false ) return '_';
-    if(board[x][y].isRevealed==true and board[x][y].hasMine==true) return 'X';
-    if(board[x][y].isRevealed== true and countMines(x,y) == 0) return ' ';
-    if(board[x][y].isRevealed==true and countMines( x,y)!=0 )
-    {
-        if(countMines(x,y)==1) {return '1';
+char MinesweeperBoard::getFieldInfo(int x, int y) const {
+    if (x > width or x < 0 or y > height or y < 0)
+        return '#';
+    if (board[x][y].isRevealed == false and board[x][y].hasFlag == false)
+        return '_';
+    if (board[x][y].isRevealed == true and board[x][y].hasMine == true)
+        return 'X';
+    if (board[x][y].isRevealed == true and countMines(x, y) == 0)
+        return ' ';
+    if (board[x][y].isRevealed == true and countMines(x, y) != 0) {
+        if (countMines(x, y) == 1) {
+            return '1';
         }
-        if(countMines(x,y)==2) {return '2';
+        if (countMines(x, y) == 2) {
+            return '2';
         }
-        if(countMines(x,y)==3) {return '3';
+        if (countMines(x, y) == 3) {
+            return '3';
         }
-        if(countMines(x,y)==4) {return '4';
+        if (countMines(x, y) == 4) {
+            return '4';
         }
-        if(countMines(x,y)==5) {return '5';
+        if (countMines(x, y) == 5) {
+            return '5';
         }
-        if(countMines(x,y)==6) {return '6';
+        if (countMines(x, y) == 6) {
+            return '6';
         }
-        if(countMines(x,y)==7) {return '7';
+        if (countMines(x, y) == 7) {
+            return '7';
         }
-        if(countMines(x,y)==8) {return '8';
+        if (countMines(x, y) == 8) {
+            return '8';
         }
 
     }
@@ -302,7 +324,8 @@ char MinesweeperBoard::getFieldInfo(int x, int y) const
 
 int main()
 {
-    
-    MinesweeperBoard board = MinesweeperBoard(9, 7, EASY);
-    board.debug_display();
+    srand(time(NULL));
+    MinesweeperBoard test(7,9,DEBUG);
+    test.debug_display();
+    return 0;
 }
