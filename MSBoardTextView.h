@@ -4,9 +4,11 @@
 
 class MSBoardTextView {
     MinesweeperBoard &board;
-public:
+private:
     int height;
     int width;
+public:
+  
     MSBoardTextView(MinesweeperBoard & board )                ;
     void display() const;
 };
