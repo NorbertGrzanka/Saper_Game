@@ -1,12 +1,14 @@
 #include "MinesweeperBoard.h"
 #include "MSBoardTextView.h"
+#include "MSTextController.h"
+#include <iostream>
+#include <ctime>
 
-int main()
-{
-    MinesweeperBoard board (20, 10, GameMode::EASY);
-    MSBoardTextView view ( board );
-    view.display();
-    board.revealField(0,5);
-    view.display();
+int main() {
+    srand(time(NULL));
+    MinesweeperBoard board(4, 4, GameMode::NORMAL);
+    MSBoardTextView view(board);
+    MSTextController ctrl(board, view);
+
+    ctrl.play();
 }
-
