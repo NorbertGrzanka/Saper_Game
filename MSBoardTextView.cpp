@@ -1,7 +1,7 @@
 #include "MinesweeperBoard.h"
 #include "MSBoardTextView.h"
+#include "MSTextController.h"
 #include <iostream>
-
 
 
 MSBoardTextView::MSBoardTextView(MinesweeperBoard & boardd ) : board(boardd)
@@ -13,7 +13,9 @@ MSBoardTextView::MSBoardTextView(MinesweeperBoard & boardd ) : board(boardd)
 void MSBoardTextView::display() const {
     for ( int i=0; i<height ; i++){
         for(int j=0; j<width ; j++){
-            std::cout<<board.getFieldInfo(i,j)<<std::endl;
+            std::cout<<"["<<board.getFieldInfo(i,j)<<"]";
         }
+    cout<<endl;
     }
+    
 }
