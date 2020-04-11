@@ -1,14 +1,28 @@
 #include "MinesweeperBoard.h"
 #include "MSBoardTextView.h"
 #include "MSTextController.h"
+#include "MSSFMLView.h"
 #include <iostream>
-#include <ctime>
 
-int main() {
-    srand(time(NULL));
-    MinesweeperBoard board(5, 5, GameMode::EASY);
-    MSBoardTextView view(board);
-    MSTextController ctrl(board, view);
 
-    ctrl.play();
+int main()
+{
+    sf::RenderWindow win(...);
+
+    MinesweeperBoard board(7, 4, DEBUG);
+    MSSFMLView view (board);
+
+
+    board.toggleFlag(0,0);
+    board.revealField(2,3);
+
+    // rysujemy
+    while (win.isOpen())
+    {
+        // obsługa zdarzeń
+        //
+        win.clear();
+        view.draw(win);   // wywołujemy funkcję draw i dostarczamy jej okno na którym ma odbyć sie rysowanie
+        win.display();
+    }
 }
