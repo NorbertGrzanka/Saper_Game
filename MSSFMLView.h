@@ -9,15 +9,16 @@
 class MSSFMLView {
     MinesweeperBoard& board;
     sf::Font font;
-    sf::RectangleShape UnRev(int width, int height, int size);
-    sf::RectangleShape Rev(int width, int height, int size);
+    sf::RectangleShape y(int width, int height, int size);
+    sf::RectangleShape x(int width, int height, int size);
     sf::Text Mines(int width, int height, int size);
     sf::Text Mine(int width, int height, int size);
     sf::Text Flag(int width, int height, int size);
 
 public:
+
     explicit MSSFMLView(MinesweeperBoard& b);
-    void draw(sf::RenderWindow& win);
+    void draw(sf::RenderWindow& window);
 
 
 };
