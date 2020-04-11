@@ -14,13 +14,13 @@ class MSSFMLView {
     sf::Text Mines(int width, int height, int size);
     sf::Text Mine(int width, int height, int size);
     sf::Text Flag(int width, int height, int size);
-
+    sf::Sprite sprite;
+    int width,height;
+    sf::Texture block,mine,flag,revealed[5],mine_revealed;
+    
 public:
-
     explicit MSSFMLView(MinesweeperBoard& b);
     void draw(sf::RenderWindow& window);
-
-
 };
 
 
