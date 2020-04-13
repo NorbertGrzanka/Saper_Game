@@ -156,25 +156,25 @@ bool MinesweeperBoard::hasMine(int x, int y) const {
 */
 GameState MinesweeperBoard::getGameState() const
 {
-    int mines1 = mines;
-    int mines2 = mines;
+    int min1 = mines;
+    int min2 = mines;
     for (int i = 0; i < getBoardHeight(); i++) {
         for (int j = 0; j < getBoardWidth(); j++) {
             if (getFieldInfo(i, j) == 'x')
                 return FINISHED_LOSS;
             if (hasFlag(j, i)) {
                 if (!board[i][j].hasMine && hasFlag(j, i))
-                    mines1++;
+                    min1++;
                 if (board[i][j].hasMine && hasFlag(j, i))
-                    mines1--;
+                    min1--;
             }
             if (!isRevealed(i, j) && board[i][j].hasMine)
-                mines2--;
+                min2--;
             if (!isRevealed(i, j) && !board[i][j].hasMine)
-                mines2++;
+                min2++;
         }
     }
-    if (mines2 == 0 || mines1 == 0)
+    if (min1 == 0 || min2 == 0)
         return FINISHED_WIN;
     return RUNNING;
 }
