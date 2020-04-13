@@ -1,9 +1,11 @@
-
+#include <ctime>
+#include <iostream>
 #ifndef UNTITLED18_MINESWEEPERBOARD_H
 #define UNTITLED18_MINESWEEPERBOARD_H
+
 using namespace std;
 enum GameMode  { DEBUG, EASY, NORMAL, HARD };
-enum GameState { RUNNING, FINISHED_WIN, FINISHED_LOSS };
+enum GameState { START, RUNNING, FINISHED_WIN, FINISHED_LOSS };
 struct Field
 {
     bool hasMine;
@@ -19,9 +21,10 @@ class MinesweeperBoard
     int height;
     GameState condition;
     int mines;
+    bool OutOf(int x, int y) const;
 
 public:
-    MinesweeperBoard();
+
     MinesweeperBoard(int width, int height, GameMode mode );
     int getBoardWidth() const;
     int getBoardHeight() const;
@@ -36,5 +39,6 @@ public:
     char getFieldInfo(int x, int y) const;
     void debug_display() const;
 };
+
 
 #endif //UNTITLED18_MINESWEEPERBOARD_H
