@@ -72,7 +72,7 @@ bool MinesweeperBoard::OutOf(int x, int y) const {
 
 int MinesweeperBoard::countMines(int x, int y) const {
     int ile = 0;
-    if ((!board[y][x].isRevealed) or OutOf(x, y))
+    if (OutOf(x, y) or (!board[y][x].isRevealed) )
         return -1;
     else
         for (int i = 0; i < 3; i++) {
