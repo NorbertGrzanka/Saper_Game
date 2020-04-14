@@ -78,10 +78,7 @@ int MinesweeperBoard::countMines(int x, int y) const {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (MinesweeperBoard::board[y - 1 + i][x + j - 1].hasMine && !OutOf(x - 1 + j, y - 1 + i))
-        /*for (int i = -1; i < 1; i++) {
-            for (int j = -1; j < 1; j++) {
-                if( !(x+i<0 or y+j<0 or x+i>width or y+j> height) and OutOf(x-1 + j , y - 1 +i))
-                */
+        
                     ile ++;
             }
         }
