@@ -1,10 +1,11 @@
-project(untitled18)
+cmake_minimum_required(VERSION 3.1)
+project(SAPER)
 
 set(CMAKE_CXX_STANDARD 14)
+add_compile_options(-Wall -Wextra)
 
-include_directories(.)
 
-add_executable(untitled18
+add_executable(SAPER
     CMakeLists.txt
     main.cpp
     MinesweeperBoard.cpp
@@ -19,6 +20,6 @@ set(SFML_DIR ${SFML_PATH}/lib/cmake/SFML)
 find_package(SFML 2 REQUIRED graphics window system)
 
 if(SFML_FOUND)
-    target_link_libraries(untitled18 sfml-graphics sfml-window sfml-audio)
-    include_directories(${SFML_PATH}/include/SFML/)
+    target_link_libraries(SAPER sfml-graphics sfml-window sfml-audio)
+
 endif()
