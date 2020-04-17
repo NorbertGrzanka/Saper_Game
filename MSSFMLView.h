@@ -4,23 +4,24 @@
 
 #ifndef UNTITLED18_MSSFMLVIEW_H
 #define UNTITLED18_MSSFMLVIEW_H
-
+#define size_ 40
 
 class MSSFMLView {
     MinesweeperBoard& board;
+
     sf::Font font;
-    sf::RectangleShape y(int width, int height, int size);
-    sf::RectangleShape x(int width, int height, int size);
-    sf::Text Mines(int width, int height, int size);
-    sf::Text Mine(int width, int height, int size);
-    sf::Text Flag(int width, int height, int size);
-    sf::Sprite sprite;
-    int width,height;
-    sf::Texture block,mine,flag,revealed[5],mine_revealed;
-    
+    sf::Text text;
+    sf::RectangleShape rectangle;
+
+
 public:
-    explicit MSSFMLView(MinesweeperBoard& b);
-    void draw(sf::RenderWindow& window);
+    explicit MSSFMLView(MinesweeperBoard& board) :board(board){
+        rectangle.setSize(sf::Vector2f(size_,size_));
+        text.setFillColor(sf::Color::Yellow);
+        font.loadFromFile("arial.ttf");
+        text.setFont(font);
+    }
+    void draw (sf::RenderWindow& window);
 };
 
 
