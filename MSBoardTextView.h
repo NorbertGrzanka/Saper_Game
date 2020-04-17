@@ -1,28 +1,22 @@
-#include <SFML/Graphics.hpp>
-#include "MinesweeperBoard.h"
-#include <string>
 
-#ifndef UNTITLED18_MSSFMLVIEW_H
-#define UNTITLED18_MSSFMLVIEW_H
-#define size_ 40
-
-class MSSFMLView {
-    MinesweeperBoard& board;
-
-    sf::Font font;
-    sf::Text text;
-    sf::RectangleShape rectangle;
+#ifndef UNTITLED18_MSBOARDTEXTVIEW_H
+#define UNTITLED18_MSBOARDTEXTVIEW_H
 
 
+
+class MSBoardTextView {
+    MinesweeperBoard &board;
+
+private:
+    int height;
+    int width;
 public:
-    explicit MSSFMLView(MinesweeperBoard& board) :board(board){
-        rectangle.setSize(sf::Vector2f(size_,size_));
-        text.setFillColor(sf::Color::Yellow);
-        font.loadFromFile("arial.ttf");
-        text.setFont(font);
-    }
-    void draw (sf::RenderWindow& window);
+
+    MSBoardTextView(MinesweeperBoard & board );
+    void display() const;
 };
 
 
-#endif //UNTITLED18_MSSFMLVIEW_H
+
+
+#endif //UNTITLED18_MSBOARDTEXTVIEW_H
