@@ -1,33 +1,23 @@
-#include "MSTextController.h"
-#include "MSSFMLView.h"
 #include "MSSFMLView.h"
 
-
-void MSSFMLView::draw(sf::RenderWindow &win)
+void MSSFMLView::draw (sf::RenderWindow& window)
 {
-    double x=50,y=0;
-    char check;
-    for(int row=0;row<height;row++)
-    {
-        for(int col=0;col<width;col++)
-        {
-            check=board.getFieldInfo(row,col);
-            if(check=='_') sprite.setTexture(block);
-            if(check=='F') sprite.setTexture(flag);
-            if(check==' ') sprite.setTexture(revealed[0]);
-            for(int i=1;i<9;i++)
-            {
-                if(check==i+'0') sprite.setTexture(revealed[i]);
-            }
-            if(check=='X') sprite.setTexture(mine);
-            if(check=='x') sprite.setTexture(mine_revealed);
-            sprite.setPosition(sf::Vector2f(x, y));
-            win.draw(sprite);
-            x=x+50;
-        }
-        x=50;
-        y=y+50;
-    }
+  for(int i=0; i<board.getBoardWidth(); i++)
+      for(int j=0; j<board.getBoardHeight(); j++)
+      {
+
+          rectangle.setPosition(((size_+2)*i),((size_+2)*j));
+
+          text.setPosition(((size_+2)*i)+10,((size_+2)*j));
+          if(board.isRevealed(i,j))
+              rectangle.setFillColor(sf::Color(100,100,100));
+          else
+              rectangle.setFillColor(sf::Color(60,60,60));
+          text.setString((board.getFieldInfo(i,j)));
+
+          window.draw(rectangle);
+          window.draw(text);
+      }
 
 
 }
