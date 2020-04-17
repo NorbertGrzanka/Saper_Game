@@ -15,7 +15,7 @@ void MSBoardTextView::display() const {
         for(int j=0; j<width ; j++){
             std::cout<<"["<<board.getFieldInfo(i,j)<<"]";
         }
-    cout<<endl;
+    std::cout<<std::endl;
     }
     
 }
