@@ -1,7 +1,7 @@
 #include "MinesweeperBoard.h"
 #include "MSBoardTextView.h"
-#ifndef UNTITLED18_MSTEXTCONTROLLER_H
-#define UNTITLED18_MSTEXTCONTROLLER_H
+#ifndef SAPER_MSTEXTCONTROLLER_H
+#define SAPER_MSTEXTCONTROLLER_H
 
 
 class MSTextController {
@@ -15,4 +15,4 @@ public:
 };
 
 
-#endif //UNTITLED18_MSTEXTCONTROLLER_H
+#endif //SAPER_MSTEXTCONTROLLER_H
