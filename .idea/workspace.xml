@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="SAPER" targetName="SAPER" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5daec2b3-0a04-49d8-a238-10d57ab41f1d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinesweeperBoard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MinesweeperBoard.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SAPER.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SAPER.exe" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZcyyMxjW8bWHlaJQ7lWmjsfghF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Norbi\.CLion2019.2\Saper" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="SAPER" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SAPER" TARGET_NAME="SAPER" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SAPER" RUN_TARGET_NAME="SAPER">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5daec2b3-0a04-49d8-a238-10d57ab41f1d" name="Default Changelist" comment="" />
+      <created>1585152930578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585152930578</updated>
+      <workItem from="1585152931827" duration="6714000" />
+      <workItem from="1585210739359" duration="5054000" />
+      <workItem from="1585221485713" duration="5355000" />
+      <workItem from="1585732719400" duration="1791000" />
+      <workItem from="1585814465928" duration="13375000" />
+      <workItem from="1586107879383" duration="2481000" />
+      <workItem from="1586264149343" duration="315000" />
+      <workItem from="1586417147848" duration="4171000" />
+      <workItem from="1586421849351" duration="57000" />
+      <workItem from="1586421909713" duration="80000" />
+      <workItem from="1586421992538" duration="141000" />
+      <workItem from="1586422148295" duration="42000" />
+      <workItem from="1586422196446" duration="7131000" />
+      <workItem from="1586522078048" duration="4855000" />
+      <workItem from="1586592739343" duration="2933000" />
+      <workItem from="1586688038689" duration="11816000" />
+      <workItem from="1586768622793" duration="11569000" />
+      <workItem from="1586850718321" duration="12478000" />
+      <workItem from="1586938355722" duration="6776000" />
+      <workItem from="1587023715189" duration="13536000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

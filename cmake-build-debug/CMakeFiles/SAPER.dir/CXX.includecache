@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Norbi/CLionProjects/untitled18/MinesweeperBoard.cpp
+MinesweeperBoard.h
+C:/Users/Norbi/CLionProjects/untitled18/MinesweeperBoard.h
+iostream
+-
+cstdlib
+-
+
+C:/Users/Norbi/CLionProjects/untitled18/MinesweeperBoard.h
+
