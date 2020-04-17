@@ -1,5 +1,5 @@
-#ifndef UNTITLED18_MINESWEEPERBOARD_H
-#define UNTITLED18_MINESWEEPERBOARD_H
+#ifndef SAPER_MINESWEEPERBOARD_H
+#define SAPER_MINESWEEPERBOARD_H
 enum GameMode {
     DEBUG, EASY, NORMAL, HARD
 };
@@ -47,4 +47,4 @@ public:
 
     char getFieldInfo(int x, int y) const;
 };
-#endif //UNTITLED18_MINESWEEPERBOARD_H
+#endif //SAPER_MINESWEEPERBOARD_H
