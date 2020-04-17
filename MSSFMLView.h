@@ -2,8 +2,8 @@
 #include "MinesweeperBoard.h"
 #include <string>
 
-#ifndef UNTITLED18_MSSFMLVIEW_H
-#define UNTITLED18_MSSFMLVIEW_H
+#ifndef SAPER_MSSFMLVIEW_H
+#define SAPER_MSSFMLVIEW_H
 #define size_ 40
 
 class MSSFMLView {
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //UNTITLED18_MSSFMLVIEW_H
+#endif //SAPER_MSSFMLVIEW_H
